@@ -1,0 +1,118 @@
+:root{
+  --cyan: hsl(179, 62%, 43%);
+  --lightCyan: rgb(74, 190, 189);
+  --brightYellow: hsl(71, 73%, 54%);
+  --lightGray: hsl(204, 43%, 93%);
+  --grayishBlue: hsl(218, 22%, 67%);
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-size: 16px;
+  font-family: 'Karla', sans-serif;
+  background-color: var(--lightGray);
+  display: flex;
+  justify-content: center;
+}
+.wrapper{
+  width: 90%;
+  display: grid;
+  background-color: white; /* DE SCOS  */
+  border-radius: 10px;
+  margin: 3em 0;
+  .content{
+    padding: 1.5em;
+  }
+  .first{
+    h1{
+      color: var(--cyan);
+      margin-bottom: 1em;
+    }
+    h2{
+      color: var(--brightYellow);
+      font-size: 1.3rem;
+      padding-bottom: 1em;
+    }
+    p{
+      line-height: 25px;
+      color: var(--grayishBlue);
+    }
+  }
+  .second{
+    background-color: var(--cyan);
+    color: white;
+    h2{
+      font-size: 1.3rem;
+      margin-bottom: 1em;
+    }
+    .pricing-month{
+      display: flex;
+      align-items: center;
+      gap: 1em;
+      margin-bottom: .5em;
+      p{
+        color: var(--lightGray);
+        opacity: 0.6;
+        margin-bottom: 0;
+      }
+    }
+    p{
+      color: var(--lightGray);
+      margin-bottom: 2em;
+    }
+    .btn{
+      cursor: pointer;
+      width: 100%;
+      padding: 1em 0;
+      background-color: var(--brightYellow);
+      text-align: center;
+      border-radius: 10px;
+      font-weight: 700;
+      box-shadow: 0 7px rgba(0,0,0,0.05);
+      margin-bottom: .5em;
+    }
+  }
+  .third{
+    background-color: var(--lightCyan);
+    color: white;
+    border-radius: 0 0 10px 10px;
+    h2{
+      font-size: 1.3rem;
+      margin-bottom: 1em;
+    }
+    ul{
+      list-style: none;
+      li{
+        margin-bottom: .3em;
+        color: var(--lightGray);
+      }
+    }
+  }
+}
+@media only screen and (min-width: 650px){
+  body{
+    margin: 5% auto;
+  }
+  .wrapper{
+    max-width: 50%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "first first"
+    "second third";
+    .first{
+      grid-area: first;
+    }
+    .third{
+      border-radius: 0 0 10px 0;
+      h2{
+        margin-bottom: .6em;
+      }
+    }
+    .second{
+      border-radius: 0 0 0 10px;
+    }
+  }
+}
